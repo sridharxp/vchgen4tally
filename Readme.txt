@@ -13,3 +13,6 @@ Simple and Compound
 Uses ODBC port
 
 For Xml generation Excel2Tally (Repo) uses more modern, featured code
+
+Dependency
+	bjXml (Repo)
