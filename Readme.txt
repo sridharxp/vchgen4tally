@@ -1,7 +1,3 @@
-vchgen4tally
-
-Generator for Tally
-
 Voucher Generator for Tally
 
 For Educational purposes only
