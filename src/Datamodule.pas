@@ -281,6 +281,7 @@ begin
   CreateFields.Add('ID;C;1;0');
   CreateFields.Add('NAME;C;50;0');
   CreateFields.Add('PARENT;C;50;0');
+  CreateFields.Add('STATUS;C;1;0');
   DBFType := Clipper;
   DBFTable := Scratch;
   DBFTable.DatabaseName := 'DATA';
@@ -290,22 +291,7 @@ if not FileExists('Data\TALYWMST.DBF') then
   hCreateTable.execute;
 Scratch.Close;
 
-{ TALYWCMP.DBF }
-with hCreateTable do
-begin
-  CreateFields.Clear;
-  CreateFields.Add('CMPNAME;C;40;0');
-  CreateFields.Add('GUID;C;36;0');
-  DBFType := Clipper;
-  DBFTable := Scratch;
-  DBFTable.DatabaseName := 'DATA';
-  DBFTable.TableName := 'TALYWCMP.DBF';
-end;
-if not FileExists('Data\TALYWCMP.DBF') then
-  hCreateTable.execute;
-{ Size 77}
 
-Scratch.Close;
 
 Scratch.Free;
 end;
