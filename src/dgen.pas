@@ -157,11 +157,6 @@ begin
   hTalywMst.First;
   while not hTalywmst.EOF do
   begin
-    if hTalywMst.StringGet('ID') <> 'L' then
-    begin
-      hTalywMst.Next;
-      Continue;
-    end;
     hdLlist.Append;
     hdLlist.StringPut('NAME', HtALYWmST.StringGet('NAME'));
     hdLlist.StringPut('PARENT', HtALYWmST.StringGet('PARENT'));
@@ -220,6 +215,8 @@ begin
     if Length(hEVCfg.StringGet('UNIT')) > 0 then
       hdLlist.StringPut('UNIT', hEVCFG.StringGet('UNIT'));
     hdLlist.Post;
+    FUpdate(HtALYWmST.StringGet('NAME'));
+    Application.ProcessMessages;
     hTalywMst.Next;
   end;
 end;
